@@ -1,0 +1,7 @@
+joke; Joke; jokes; Jokes; funny; Funny; laugh; Laugh - What is the best thing about Switzerland? I do not know, but the flag is a big plus.; Hear about the new restaurant called Karma? There is no menu: You get what you deserve.; What do you call an ant who fights crime? A vigilANTe!; How does the ocean say hi? It waves!; What do you call a couple of chimpanzees sharing an Amazon account? PRIME-mates.; Name the kind of tree you can hold in your hand? A palm tree!; What did the left eye say to the right eye? Between us, something smells!; 
+weather; Weather; sky; Sky - A bit sunny; Take a raincoat; Take an umbrela; Foggy; Cloudy; Its windy; You should go to the beach; 
+name; Name - My name is Lili, and I am Siri´s sister!; 
+birthday; Birthday; congrats; Congrats; congratulations; Congratulations - Thank you, thank you! Glad u remembered!; 
+hello; Hello; hi; Hi; hey; Hey; morning; evening - Hey there!; Hello!; Hi!; Hi! How can i help u?; 
+song; Song; spotify; Spotify; music; Music - 001; 
+time; Time - 002; 
