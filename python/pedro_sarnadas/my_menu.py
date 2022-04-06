@@ -1,3 +1,4 @@
+# HS Recruitment Project - Python - Pedro Sarnadas
 import re
 from os import system, name
 from my_tictactoe import main_ai_player, main_2players

@@ -1,6 +1,8 @@
+# HS Recruitment Project - Python - Pedro Sarnadas
 from os import system, name
 
 
+# Clear Screen
 def clear():
     # for windows
     if name == 'nt':
@@ -11,6 +13,7 @@ def clear():
         _ = system('clear')
 
 
+# Check expression syntax
 def check_syntax(line, operator, i):
     if i == 0 and not(operator == "("):
         return False
@@ -62,13 +65,15 @@ def check_syntax(line, operator, i):
             return True
 
 
-def parenthesis_pair_check_1(line, i): #(
+# Check for ")" match
+def parenthesis_pair_check_1(line, i):
     for j in range(i, len(line)):
         if line[j] == ")":
             return True
     return False
 
 
+# Check for "(" match
 def parenthesis_pair_check_2(line, i): #)
     for j in range(0, i):
         if line[j] == "(":
@@ -76,6 +81,7 @@ def parenthesis_pair_check_2(line, i): #)
     return False
 
 
+# Checks for an even number of "(" and ")"
 def number_parenthesis(line):
     count_open = 0
     count_close = 0
@@ -89,6 +95,7 @@ def number_parenthesis(line):
     return False
 
 
+# Checks for parenthesis syntax
 def check_parenthesis(line):
     if number_parenthesis(line):
         for i in range(0, len(line)):
@@ -107,6 +114,7 @@ def check_parenthesis(line):
         return False
 
 
+# Checks expression characters
 def valid_character(char):
     if char.isdigit() or (char == "+" or char == "-" or char == "*"\
             or char == "/" or char == "%" or char == "(" or char == ")"):
@@ -115,7 +123,10 @@ def valid_character(char):
         return False
 
 
+# Checks expression for invalid elements
 def valid_input(line):
+    if line == "":
+        return False
     for i in range(0, len(line)):
         if valid_character(line[i]):
             continue
@@ -134,15 +145,18 @@ def valid_input(line):
     return True
 
 
+# Basic calculator
+# Use eval()... so does not meet project requirements... oh well
 def simple_calculator():
     while True:
-        print('''Simple Calculator (eval) - Available Operations:\n
+        print('''Simple Calculator (uses eval function) - Available Operations:\n
             "+" -> addition,\
             "-" -> subtraction,\
             "*" -> multiplication,\
             "/" -> division,\n
             \t\t"**" -> exponentiation,\
             \t\t"%" -> modulus/remainder\n
+            note: uses "(" and ")" to establish precedence between operations
                 ''')
         print("QUIT - 0\n")
         eq = input()
@@ -159,6 +173,7 @@ def simple_calculator():
             print("Expression could not be evaluated...")
         eq = input()
         clear()
+
 
 if __name__ == "__main__":
     simple_calculator()

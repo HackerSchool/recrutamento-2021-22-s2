@@ -1,3 +1,4 @@
+# HS Recruitment Project - Python - Pedro Sarnadas
 from os import system, name
 import random
 # from random import choice
@@ -5,6 +6,7 @@ import re
 # from re import split, match
 
 
+# AI Struct
 class AI:
     def __init__(self):
         self.ai_positions = [" ", " ", " ", " ", " "]
@@ -13,12 +15,14 @@ class AI:
         self.count = 0
 
     def reset(self):
+        # Reset AI parameters (its, the player and vacant positions)
         self.ai_positions = [" ", " ", " ", " ", " "]
         self.pp_positions = [" ", " ", " ", " ", " "]
         self.possible_list = [" ", " ", " ", " ", " ", " ", " ", " ", " "]
         self.count = 0
 
 
+# Clears Screen
 def clear():
     # for windows
     if name == 'nt':
@@ -94,6 +98,7 @@ def valid_move(move, board, row_scheme, col_scheme):
         return False
 
 
+# Adds move to the board
 def add_move(move, board, row_scheme, col_scheme, current_player):
     i = int(row_scheme[move])
     j = int(col_scheme[move])
@@ -101,8 +106,9 @@ def add_move(move, board, row_scheme, col_scheme, current_player):
     return board
 
 
+# Checks for victory
 def victory_condition(board, mode):
-    #Lines
+    #"Lines"
     if board[0][0] == board[1][0] and board[1][0] == board[2][0] and board[2][0] == mode:
         return True
     elif board[0][1] == board[1][1] and board[1][1] == board[2][1] and board[2][1] == mode:
@@ -124,6 +130,7 @@ def victory_condition(board, mode):
         return False
 
 
+# Verifies if the round has ended by victory or draw
 def end_round(board, current_player, not_ai):
     clear()
     if victory_condition(board, current_player):
@@ -140,20 +147,26 @@ def end_round(board, current_player, not_ai):
     return decision
 
 
-def play_menu(board, aux_board, current_player, not_ai):
+def play_menu(board, aux_board, current_player, not_ai, not_ai_game):
     clear()
-    if not_ai:
+    if not_ai_game:
         print("PvP Game:")
         print("Current Player: " + current_player + "\n")
     else:
         print("PvE Game:")
-        print("CPU Player: " + current_player + "\n")
+        if not_ai:
+            print("Human Player: " + current_player + "\n")
+        else:
+            print("CPU Player: " + current_player + "\n")
     print_boards(board, aux_board)
 
     if not_ai:
         print("\nYour move:")
         move = input()
         return move
+    else:
+        print("\n<Press ENTER>")
+        return
 
 
 def continue_menu(board, current_player, not_ai):
@@ -170,11 +183,12 @@ def continue_menu(board, current_player, not_ai):
     return ret
 
 
+# Player vs Player Game
 def pvp_ttt(board, aux_board, row_scheme, col_scheme):
     while True:
         while True:
             current_player = "X"
-            move = play_menu(board, aux_board, current_player, True)
+            move = play_menu(board, aux_board, current_player, True, True)
             if valid_move(move, board, row_scheme, col_scheme):
                 board = add_move(move, board, row_scheme, col_scheme, current_player)
                 break
@@ -189,7 +203,7 @@ def pvp_ttt(board, aux_board, row_scheme, col_scheme):
         #Next Player
         while True:
             current_player = "O"
-            move = play_menu(board, aux_board, current_player, True)
+            move = play_menu(board, aux_board, current_player, True, True)
             if valid_move(move.strip("\n"), board, row_scheme, col_scheme):
                 board = add_move(move.strip("\n"), board, row_scheme, col_scheme, current_player)
                 break
@@ -203,6 +217,7 @@ def pvp_ttt(board, aux_board, row_scheme, col_scheme):
             break
 
 
+# Returns occupied positions of type "mode"
 def occupied_positions(board, aux_board, mode):
     count = 0
     lista = ["", "", "", "", "", "", "", "", ""]
@@ -214,6 +229,7 @@ def occupied_positions(board, aux_board, mode):
     return lista
 
 
+# Tries to find a vacant position that assures win of player "mode" (X or O)
 def try_draw_win(board, aux_board, row_scheme, col_scheme, mode):
     move = " "
     if ((board[0][0] == mode and board[1][0] == mode) or (board[2][1] == mode and board[2][2] == mode)
@@ -246,6 +262,7 @@ def try_draw_win(board, aux_board, row_scheme, col_scheme, mode):
     return " "
 
 
+# Counts number of "valid"/digit elements of a list
 def county(lista):
     count = 0
     for i in range(len(lista)):
@@ -266,9 +283,10 @@ def stalemate(board):
         return False
 
 
+# Solves the second move of AI when playing first
 def ai_first_second_move(myAI, board):
     move = " "
-    if myAI.count == 7 and board[1][1] == "O":  # Second move
+    if myAI.count == 7 and board[1][1] == "O":
         if myAI.ai_positions[0] == "1":
             move = "9"
         elif myAI.ai_positions[0] == "3":
@@ -278,13 +296,12 @@ def ai_first_second_move(myAI, board):
         elif myAI.ai_positions[0] == "9":
             move = "1"
     else:
-        move = second_vantage_point(myAI, board)
+        move = ai_first_second_move_middle_open(myAI, board)
     return move
 
 
-def second_vantage_point(myAI, board):
+def ai_first_second_move_middle_open(myAI, board):
     lista = [" ", " "]
-
     if (myAI.ai_positions[0] == "1") and (myAI.pp_positions[0] == "2" or myAI.pp_positions[0] == "3"):
         lista = ["7", "9"]
     elif (myAI.ai_positions[0] == "1") and (myAI.pp_positions[0] == "4" or myAI.pp_positions[0] == "7"):
@@ -308,10 +325,11 @@ def second_vantage_point(myAI, board):
     return move
 
 
+# Picks a corner with an open "line" or middle (somewhat redundant)
 def open_vantage_point(board, aux_board, move, opponent):
     if board[1][1] == " ":  # Just in case middle is unoccupied
         move = "5"
-    if move == " ":         # Control Corners Accordingly (probably not needed...)
+    if move == " ":         # Control Corners Accordingly
         if board[0][0] == " " and ((board[0][1] != opponent and board[0][2] != opponent) \
                                    or (board[1][0] != opponent and board[2][0] != opponent)):
             move = aux_board[0][0]
@@ -327,6 +345,7 @@ def open_vantage_point(board, aux_board, move, opponent):
     return move
 
 
+# Picks a corner with an open neighbour position (somewhat redundant)
 def mild_vantage_corner(board, aux_board, opponent):
     move = " "
     # Control Corners
@@ -341,40 +360,51 @@ def mild_vantage_corner(board, aux_board, opponent):
     return move
 
 
+# AI plays first strategy
 def ai_first_strat(myAI, board, aux_board, row_scheme, col_scheme):
     myAI.possible_list = occupied_positions(board, aux_board, " ")
     myAI.ai_positions = occupied_positions(board, aux_board, "X")
     myAI.pp_positions = occupied_positions(board, aux_board, "O")
     myAI.count = county(myAI.possible_list)
 
-    #First Moves
-    if myAI.count == 9: #Opening
+    # First Moves
+    if myAI.count == 9: # Opening
         lista = ["1", "3", "7", "9"]
         move = random.choice(lista)
         return move
     if myAI.count == 7:
         move = ai_first_second_move(myAI, board)
         return move
-    #Late Game
+    # Late Game
     if myAI.count <= 5:
         move = try_draw_win(board, aux_board, row_scheme, col_scheme, "X")
         if move == " ":
             move = try_draw_win(board, aux_board, row_scheme, col_scheme, "O")
             if move == " ":
-                move = open_vantage_point(board, aux_board, move, "O")
+                move = open_vantage_point(board, aux_board, move, "X")
                 if move == " ":
-                    move = mild_vantage_corner(board, aux_board, "O")
-        if move == " ":
-            move = myAI.possible_list[0]
+                    move = mild_vantage_corner(board, aux_board, "X")
+                    if move == " ":
+                        move = myAI.possible_list[0]
     return move
 
 
+# AI plays second strategy - when it controls middle square
 def ai_second_controls_middle(myAI, board, aux_board, row_scheme, col_scheme):
     if myAI.count == 6:
         move = try_draw_win(board, aux_board, row_scheme, col_scheme, "X")
         if move == " ":
-            lista = ["2", "4", "6", "8"]
-            move = random.choice(lista)
+            move = open_vantage_point(board, aux_board, move, "X")
+            if move == " ":
+                move = mild_vantage_corner(board, aux_board, "X")
+                if move == " ":
+                    while myAI.count == 6:
+                        lista = ["2", "4", "6", "8"]
+                        move = random.choice(lista)
+                        if board[row_scheme[move]][col_scheme[move]] == " ":
+                            return move
+                        else:
+                            continue
     else:
         move = try_draw_win(board, aux_board, row_scheme, col_scheme, "O")
         if move == " ":
@@ -384,19 +414,21 @@ def ai_second_controls_middle(myAI, board, aux_board, row_scheme, col_scheme):
     return move
 
 
+# AI plays second strategy - when it does not controls middle square
 def ai_second_no_middle_ctrl(myAI, board, aux_board, row_scheme, col_scheme):
     move = try_draw_win(board, aux_board, row_scheme, col_scheme, "X")
     if move == " ":
         move = try_draw_win(board, aux_board, row_scheme, col_scheme, "O")
-    if move == " ":
-        move = open_vantage_point(board, aux_board, move, "X")
         if move == " ":
-            move = mild_vantage_corner(board, aux_board, "X")
-        else:
-            move = myAI.possible_list[0]
+            move = open_vantage_point(board, aux_board, move, "X")
+            if move == " ":
+                move = mild_vantage_corner(board, aux_board, "X")
+                if move == " ":
+                    move = myAI.possible_list[0]
     return move
 
 
+# AI plays second strategy
 def ai_second_strat(myAI, board, aux_board, row_scheme, col_scheme):
     myAI.possible_list = occupied_positions(board, aux_board, " ")
     myAI.ai_positions = occupied_positions(board, aux_board, "O")
@@ -416,19 +448,20 @@ def ai_second_strat(myAI, board, aux_board, row_scheme, col_scheme):
     return move
 
 
+# AI Game
 def pve_ttt(board, aux_board, row_scheme, col_scheme):
     myAI = AI()
     player = "O"
     ai = "X"
     while True:
         while True:
-            play_menu(board, aux_board, ai, False)
+            play_menu(board, aux_board, ai, False, False)
             if ai == "X":
                 move = ai_first_strat(myAI, board, aux_board, row_scheme, col_scheme)
             elif ai == "O":
                 move = ai_second_strat(myAI, board, aux_board, row_scheme, col_scheme)
             else:
-                exit()
+                return
             input("\n")
             if valid_move(move, board, row_scheme, col_scheme):
                 board = add_move(move, board, row_scheme, col_scheme, ai)
@@ -445,7 +478,7 @@ def pve_ttt(board, aux_board, row_scheme, col_scheme):
             break
 
         while True:
-            move = play_menu(board, aux_board, player, True)
+            move = play_menu(board, aux_board, player, True, False)
             if valid_move(move.strip("\n"), board, row_scheme, col_scheme):
                 board = add_move(move.strip("\n"), board, row_scheme, col_scheme, player)
                 break
@@ -459,6 +492,7 @@ def pve_ttt(board, aux_board, row_scheme, col_scheme):
             board = reset_board3x3()
         elif cont == 2:
             break
+
 
 def main_2players():
     col_scheme = set_dictionary_col()
@@ -481,6 +515,7 @@ def main_ai_player():
     pve_ttt(board, aux_board, row_scheme, col_scheme)
     return
 
+
 if __name__ == "__main__":
     col_scheme = set_dictionary_col()
     row_scheme = set_dictionary_row()
@@ -488,7 +523,7 @@ if __name__ == "__main__":
     aux_board = reset_coord_board3x3()
     board = reset_board3x3()
 
-    #pve_ttt(board, aux_board, row_scheme, col_scheme)
     main_ai_player()
+    #main_2players()
     input()
     exit()
