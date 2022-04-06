@@ -15,4 +15,6 @@ O entry-point do projeto é `main_login.py` e basta correr:
 
 O programa provavelmente não funciona em darwin / win, porque importo `sys` e uso argv.
 
+PS: O número é mesmo número de telemóvel. Formato 9XXXXXXXX (sem código de país, presume-se +351)
+
 :)
