@@ -114,11 +114,15 @@ class Window(QMainWindow, Ui_MainWindow):
     def about(self):
         QMessageBox.about(
             self,
-            "About Sample Editor",
-            "<p>A sample text editor app built with:</p>"
+            "About Aplicação Fixe",
+            "<p>Construído com</p>"
             "<p>- PyQt</p>"
             "<p>- Qt Designer</p>"
-            "<p>- Python</p>",
+            "<p>- Python</p>"
+            "<p>- MySQL</p>"
+            "<p>- Twilio</p>"
+            "<p>- Passlib</p>"
+            "<p>- Bcrypt</p>",
         )
 
     def open_tictactoe(self):
