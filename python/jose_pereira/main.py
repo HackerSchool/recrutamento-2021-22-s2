@@ -1,5 +1,3 @@
-# José Pereira
-
 import os
 import time
 import webbrowser
