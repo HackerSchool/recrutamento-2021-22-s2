@@ -1,0 +1,4 @@
+#file for usernames and passwords 
+#format: name (whitespace) pass 
+ed fg
+hel tlq
