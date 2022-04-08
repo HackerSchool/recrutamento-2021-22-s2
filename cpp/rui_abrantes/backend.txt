@@ -1,0 +1,15 @@
+rui|123
+primo|3214
+Rui|1234
+david|david
+abcd|0391293
+ruia|1234
+ruiaa|1234
+ruiaaa|charizard
+Abrantes|boas1234
+ruiabrantes|boas
+Rui Abrantes|boas
+Rui Abraantes|1234
+Rui 1234|boasCharizard
+ruiaaaaa|321
+ines|321
