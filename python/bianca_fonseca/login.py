@@ -1,5 +1,5 @@
 # Bianca Fonseca 
-
+import os
 from calculadora import calculator
 
 def str_nula(str):
@@ -33,7 +33,11 @@ class Utilizador:
         self.password = password
         self.mail = mail
 
-list=[]
+lista=[]
+f=open("database.txt", "r")
+for line in f:
+    lista.append(line.split())
+f.close()
 
 def registar():
     nome = input("Nome próprio: ")
@@ -48,8 +52,8 @@ def registar():
     while str_nula(username):
         username = input("Username: ")
 
-    for i in list:
-        while i.username == username:
+    for i in lista:
+        while i[2] == username:
             print("Este username já está a ser usado. Escolhe outro.")
             username = input("Username: ")
 
@@ -64,13 +68,17 @@ def registar():
     while str_nula(mail):
         mail = input("E-mail: ")  
 
-    for i in list:
-        while i.mail == mail:
+    for i in lista:
+        while i[4] == mail:
             print("Este email está associado a outra conta.")
             mail = input("E-mail: ")
 
     user = Utilizador(nome, apelido, username, password, mail)
-    list.append(user)
+    f=open("database.txt", "a")
+    f.write(nome+" "+ apelido+" "+ username+" "+ password+" "+ mail+"\n")
+    f.close()
+    a=[nome, apelido, username, password, mail]
+    lista.append(a)
     print("Registo efetuado com sucesso!")
     return user
 
@@ -95,11 +103,16 @@ def newpassword(username, password):
                     newpass= input("Password nova: ")
                     newpass1 = input("Confirma a password nova: ")
 
-            for i in list:
-                if i.username == username:
-                    i.password = newpass
+            for i in lista:
+                if i[2] == username:
+                    i[3] = newpass
                     print("A tua nova password já está prontinha a usar!")
+                    f=open("database.txt", "w")
+                    for i in lista:
+                        f.write(i[0]+" "+i[1]+" "+ i[2]+" "+ i[3]+ " "+ i[4]+"\n")
+                    f.close()
                     hackcalculate(username, password)
+    
         else:
             print("As passwords não são iguais.")
     else:
@@ -125,19 +138,19 @@ def hackcalculate(username, password):
 def login():
     j=0
     username = input("Username: ")
-    for i in list:
-            if i.username == username:
+    for i in lista:
+            if i[2] == username:
                 password = input("Password: ")
                 while(j<=2):
-                    if i.password == password:
-                        print("Olá,",i.nome, i.apelido+"!")
+                    if i[3] == password:
+                        print("Olá,",i[0], i[1]+"!")
                         hackcalculate(username, password)
                     else:
                         print("Password incorreta.")
                         if(j<2): 
                             password = input("Password: ")
                         j+=1
-                if ((j==3) and (i.password != password)):
+                if ((j==3) and (i[3] != password)):
                     print("Esqueceste-te da tua password? Não faz mal, mandámos-te um mail.")
                     menu()
             else:
