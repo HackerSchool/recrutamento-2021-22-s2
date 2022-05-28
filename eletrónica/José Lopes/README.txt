@@ -29,6 +29,13 @@ Para avançar de estado clicar nos dois botões ao mesmo tempo.
   Mostra um inteiro correspondente a uma nota, sendo 1 = A(440Hz), 12 = A(880Hz) (e todas as outras no meio);
   O intervalo entre notas é 4 cm.
 
+
+CONECTAR COM PROCESSING (Time Setup e Instrumento dependem desta funcionalidade):
+- Abrir file som_processing.pde;
+- Ligar circuito Arduino;
+- Clicar em Run;
+
+
 Para o Futuro:
 
   - Mudar o timbre do Instrumento com um botão;
