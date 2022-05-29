@@ -2,6 +2,7 @@ import main as c
 import os
 import time
 
+
 class Calculator():
     """
     Calculator Class: Represents a calculator.
@@ -59,8 +60,9 @@ class Calculator():
         """
         self.displaylogo()
         print("\n\t\t  1) Solve basic calculations.")
-        print("\t\t  2) Solve one variable equation. ")
-        print("\t\t  3) Exit Calculator.")
+        print("\t\t  2) Multiple args calculation. ")
+        print("\t\t  3) Solve one variable equation. ")
+        print("\t\t  4) Exit Calculator.")
         self.getoption()
 
     def getoption(self):
@@ -93,29 +95,32 @@ class Calculator():
         if option == '1':
             self.clearscreen()
             self.docalculation()
-        # One variable equation option
+        # Multiple args calculation option
         elif option == '2':
             self.clearscreen()
-            self.onevariablesolver()
+            self.dosupercalculation()
+        # One variable equation option
         elif option == '3':
+            self.clearscreen()
+            self.onevariablesolver()
+        elif option == '4':
             # Return to user menu.
             return
         else:
             print("Please type a valid option! ")
             self.getoption()
 
-    def docalculation(self):
+    def displaycalculationoptions(self):
         """
-        Uses eval to get the result of the expression given by the user.
+        Displays the calculator operators.
         Parameters
         ----------
         None
 
-        Results
+        Returns
         -------
         None
         """
-        self.displaylogo()
         print(f"\t{c.Color.BOLD}                   Please use:{c.Color.END}")
         print(f"\t  ({c.Color.BOLD}{c.Color.GREEN}+{c.Color.END})"
               f"for adition              ({c.Color.BOLD}{c.Color.GREEN}-"
@@ -127,13 +132,124 @@ class Calculator():
               f"for exponent            ({c.Color.BOLD}{c.Color.GREEN}%"
               f"{c.Color.END}) for rest of")
 
+    def docalculation(self):
+        """
+        Gets the result of ta basic calculation.
+        Parameters
+        ----------
+        None
+
+        Results
+        -------
+        None
+        """
+        self.displaylogo()
+        self.displaycalculationoptions()
+
         # Get expression.
-        expression = input("\n\n\t  Enter your expression here -> ")
+        first_number = int(input("\n\n\t  Enter your first number here -> "))
+        operator = input("\n\n\t  Enter your operator here -> ")
+        second_number = int(
+            input("\n\n\t  Enter your seconhd number here -> "))
         # Eval expression.
-        result = eval(expression)
+        if operator == '+':
+            result = first_number + second_number
+        elif operator == '-':
+            result = first_number - second_number
+        elif operator == '*':
+            result = first_number * second_number
+        elif operator == '/':
+            result = first_number / second_number
+        elif operator == '**':
+            result = first_number ** second_number
+        elif operator == '%':
+            result = first_number % second_number
+        else:
+            print(f"\n\t {c.Color.BOLD}{c.Color.RED}"
+                  f"Please enter valid operator .{c.Color.END}")
+
         print(f"\n\t                   {c.Color.GREEN}result: {c.Color.END}"
               f"{result}")
-        time.sleep(1.5)
+        time.sleep(2.5)
+        self.clearscreen()
+        self.mainmenu()
+
+    def dosupercalculation(self):
+        """
+        Resolves a complex expression.
+        Parameters
+        ----------
+        None
+
+        Returns
+        -------
+        None
+        """
+        self.clearscreen()
+        self.displaylogo()
+        self.displaycalculationoptions()
+        print("\tNOTE: Use one space between numbers and operators.")
+        expression = input("\tEnter your expression -> ").split()
+
+        # First do all **
+        while '**' in expression:
+            i = 0
+            for item in expression:
+                if item == '**':
+                    res = int(expression[i - 1]) ** int(expression[i + 1])
+                    del expression[i - 1]
+                    del expression[i - 1]
+                    expression[i - 1] = res
+                    break
+                i += 1
+
+        # Then do all * or / or %
+        while '*' in expression or '/' in expression or '%' in expression:
+            i = 0
+            for item in expression:
+                if item == '*':
+                    res = int(expression[i - 1]) * int(expression[i + 1])
+                    del expression[i - 1]
+                    del expression[i - 1]
+                    expression[i - 1] = res
+                    break
+                elif item == '/':
+                    res = int(expression[i - 1]) / int(expression[i + 1])
+                    del expression[i - 1]
+                    del expression[i - 1]
+                    expression[i - 1] = res
+                    break
+                elif item == '%':
+                    res = int(expression[i - 1]) % int(expression[i + 1])
+                    del expression[i - 1]
+                    del expression[i - 1]
+                    expression[i - 1] = res
+                    break
+                i += 1
+
+        # At the end do + or -
+        while '+' in expression or '-' in expression:
+            i = 0
+            for item in expression:
+                if item == '+':
+                    res = int(expression[i - 1]) + int(expression[i + 1])
+                    del expression[i - 1]
+                    del expression[i - 1]
+                    expression[i - 1] = res
+                    break
+                elif item == '-':
+                    res = int(expression[i - 1]) - int(expression[i + 1])
+                    del expression[i - 1]
+                    del expression[i - 1]
+                    expression[i - 1] = res
+                    break
+                i += 1
+        
+        # The result will be the first index of the list
+        result = expression[0]
+        print(f"\n\t                   {c.Color.GREEN}result: {c.Color.END}"
+              f"{result}")
+        time.sleep(2.5)
         self.clearscreen()
         self.mainmenu()
 
@@ -143,7 +259,7 @@ class Calculator():
         Parameters
         ----------
         None
-        
+
         Returns
         -------
         None
@@ -158,7 +274,7 @@ class Calculator():
             # Find x
             x = -int(b) / int(a)
             print(f"\n\t                   {c.Color.GREEN}x = {c.Color.END}"
-                f"{x}")
+                  f"{x}")
             time.sleep(2)
             self.clearscreen()
             # Go back to calculator main menu
@@ -169,5 +285,3 @@ class Calculator():
             time.sleep(1.5)
             self.clearscreen()
             self.onevariablesolver()
-
-        
