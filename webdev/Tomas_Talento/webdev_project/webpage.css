@@ -1,0 +1,250 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap");
+:root {
+  --col1: #ffffff;
+  --col2: #2d2e30;
+  --col3: #18181c;
+  --col4: #028c8f;
+  --col5: #3f4244;
+}
+
+body {
+  background: var(--col2);
+  margin: 0;
+  font-family: 'Poppins';
+  color: var(--col1);
+}
+
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+}
+
+a {
+  color: var(--col1);
+  text-decoration: none;
+}
+
+/*-------------------------------------*/
+header {
+  background-color: var(--col3);
+  padding: 1rem 0;
+  margin-bottom: 2rem;
+}
+
+nav {
+  width: 80%;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+nav h1 {
+  margin: 0;
+}
+
+.logo {
+  color: var(--col1);
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+span {
+  color: var(--col4);
+}
+
+.search_box {
+  padding: 1em;
+  margin-left: auto;
+}
+
+nav input[type=text] {
+  padding: 6px;
+  width: 15em;
+}
+
+.search_box button {
+  float: right;
+  padding: 6px;
+}
+
+.left_menu {
+  margin-left: 0rem;
+}
+
+nav a.link {
+  margin-left: 1.5rem;
+}
+
+nav a.link:hover {
+  font-weight: bold;
+}
+
+nav a.premium {
+  padding: .2rem .4rem;
+  margin-left: 1.5rem;
+  font-weight: bold;
+  color: var(--col4);
+  border: 3px solid var(--col4);
+  border-radius: 5em;
+}
+
+nav a.premium:hover {
+  background-color: var(--col4);
+  color: var(--col1);
+}
+
+/*-------------------------------------*/
+main .trending {
+  padding: 2rem;
+  background-color: var(--col3);
+  width: 60%;
+  margin-right: 20px;
+  margin-left: 50px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+}
+
+main .trending h2 {
+  margin-right: 80%;
+  padding: .5rem 1rem;
+  border: 2px solid var(--col4);
+  border-radius: 2rem;
+}
+
+main article {
+  background-color: var(--col2);
+  padding: .2rem 2rem;
+  border-radius: 1rem;
+  border: 2px solid var(--col4);
+  margin: 1rem;
+  width: 38%;
+  height: 7rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+main article:hover {
+  background-color: var(--col5);
+}
+
+main article h1 {
+  font-weight: bold;
+  margin-top: 1rem;
+  margin-bottom: .8rem;
+}
+
+main article p {
+  color: var(--col4);
+  margin-top: .8rem;
+  margin-bottom: .8rem;
+}
+
+main article img {
+  width: 60px;
+  height: auto;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+  margin: 10% .2rem;
+}
+
+/*-------------------------------------*/
+.sidebar {
+  position: static;
+  left: 0;
+  margin-right: 30px;
+  width: 250px;
+  height: auto;
+  background: var(--col4);
+  color: var(--col1);
+}
+
+.sidebar header {
+  background-color: var(--col4);
+  margin: 0;
+  padding: 20px;
+  font-size: 20px;
+  border-bottom: 1px solid var(--col1);
+}
+
+.sidebar header:hover {
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  list-style-type: none;
+  text-decoration: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar ul li {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid var(--col1);
+}
+
+.sidebar ul a {
+  padding-left: 20px;
+  font-size: 20px;
+}
+
+.sidebar ul a:hover {
+  padding-left: 30px;
+  font-weight: bold;
+}
+
+/*-------------------------------------*/
+footer {
+  background-color: var(--col3);
+  padding: 1.5rem 10%;
+  margin-top: 32px;
+}
+
+footer .foot_menu {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+footer .foot_menu a {
+  margin-right: 3rem;
+  font-size: 16px;
+}
+
+footer .foot_menu a:hover {
+  font-weight: bold;
+}
+/*# sourceMappingURL=webpage.css.map */
