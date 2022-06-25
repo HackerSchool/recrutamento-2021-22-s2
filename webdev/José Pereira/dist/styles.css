@@ -133,7 +133,9 @@ select {
   text-align: center;
 }
 
-#storebutton {
+#storebutton,
+#mailBtn {
+  margin-top: -10px;
   color: #fff;
   border-color: #1c1b1b;
   position: relative;
@@ -152,6 +154,52 @@ select {
     border 0.45s cubic-bezier(0.785, 0.135, 0.15, 0.86);
   z-index: 1;
   text-decoration: none;
+}
+
+/***************************/
+/*      mailing list       */
+/***************************/
+#formDiv {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-top: solid rgba(0, 0, 0, 0.2) 1px;
+  margin-top: -20px;
+  padding-top: 70px;
+  padding-bottom: 60px;
+}
+
+input {
+  margin-top: 20px;
+  -webkit-appearance: none;
+  display: block;
+  padding: 12px 14px;
+  border-radius: 0;
+  border: 1px solid #dddddd;
+  width: 100%;
+  line-height: normal;
+  resize: none;
+  transition: border-color 0.1s ease-in-out;
+  background: transparent;
+}
+
+label {
+  padding: 20px;
+  margin-left: -15px;
+  color: #1c1b1b;
+  margin-bottom: 20px;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: normal;
+  color: #1c1b1b;
+  transition: color 0.2s ease-in-out;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+#mailBtn {
+  margin-top: 20px;
 }
 
 /***************************/
