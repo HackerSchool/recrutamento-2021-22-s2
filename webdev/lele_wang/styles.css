@@ -1,0 +1,379 @@
+/* ------------------------- NAVEGATION BAR ------------------------- */
+
+.nav {
+  background-color: #171717;
+  border-top: 1px solid #d5015b;
+  display: flex;
+  height: 47px;
+  justify-content: center;
+  overflow: hidden;
+  width: auto;
+}
+
+.nav div {
+  align-items: center;
+  background-color: #171717;
+  display: flex;
+  height: 37px;
+  padding: 5px 0px;
+  position: relative;
+  width: 1100px;
+}
+
+/* Creates a clickable logo. */
+.nav div>a {
+  align-items: center;
+  background: none;
+  display: flex;
+  margin-right: 16px;
+  padding-top: 1px;
+}
+
+/* Makes a list of navegation items. */
+.nav ul {
+  align-items: center;
+  background-color: #272727;
+  color: #f2f2f2;
+  display: flex;
+  height: 37px;
+  justify-content: center;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Creates clickable navegation items. */
+.nav li>a {
+  align-items: center;
+  color: #fff;
+  display: flex;
+  font-size: .875rem;
+  height: 21px;
+  justify-content: center;
+  padding: 8px 15px;
+  text-decoration: none;
+}
+
+/* Changes navegation items' background color when hovered. */
+.nav li>a:hover {
+  background-color: #bc0150;
+}
+
+/* Creates a search box. */
+.nav form {
+  background-color: #e7edf3;
+  display: flex;
+  height: 36px;
+  overflow: hidden;
+  position: absolute;
+  right: 0px;
+  transition: .15s;
+  width: 225px;
+}
+
+/* Search icon. */
+.nav i {
+  align-items: center;
+  color: #677d99;
+  display: flex;
+  font-size: 14px;
+  float: left;
+  height: 21px;
+  justify-content: center;
+  margin-right: -36px;
+  padding: 8px 0px 7px 0px;
+  position: absolute;
+  width: 36px;
+  z-index: 1;
+}
+
+/* Search input. */
+.nav input {
+  background-color: #e7edf3;
+  border: 2px solid transparent;
+  color: #6c757d;
+  display: flex;
+  font-family: inherit;
+  font-size: 13px;
+  height: 16px;
+  padding: 8px 32px;
+  position: absolute;
+  margin: 0px;
+  width: 157px;
+}
+
+/* Changes the size of the search box while input is focused. */
+.nav form:focus-within {
+  width: 400px;
+}
+
+/*Focuses the input*/
+.nav input:focus {
+  border: 2px solid #bc0150;
+  width: 332px;
+}
+
+
+/* --------------------------- ALERT BAR --------------------------- */
+
+.alert {
+  align-items: center;
+  background-color: #d5015b;
+  color: #fff;
+  display: flex;
+  height: 24px;
+  justify-content: center;
+  padding: 12px 20px;
+}
+
+.alert div {
+  position: relative;
+}
+
+/* Links' style. */
+.alert a {
+  color: #fff;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+/* Close button. */
+.x-button {
+  background: none;
+  bottom: 0px;
+  cursor: pointer;
+  float: right;
+  font-family: inherit;
+  font-size: 1.5rem;
+  font-weight: 700;
+  height: 24px;
+  margin-left: 15px;
+  opacity: .5;
+  padding: 0px;
+  position: absolute;
+  right: 0px;
+  text-shadow: 0px 1px 0px #fff;
+  width: 14.0167px;
+}
+
+/* Close button hovered. */
+.x-button:hover {
+  opacity: 1;
+}
+
+.wrapper {
+  width: 1100px;
+}
+
+
+/* ------------------------------ MAIN ------------------------------ */
+
+main {
+  background-color: #000;
+  height: auto;
+}
+
+main>.rec {
+  background-color: #000000;
+  height: auto;
+  margin: 0px auto;
+  padding: 26px 0px 65px 0px;
+  position: relative;
+  width: 1100px;
+}
+
+.rec>h2 {
+  color: #eeeeee;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0px 0px 21px 0px;
+}
+
+.grid-container {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: auto auto auto;
+  margin-bottom: 35px;
+  max-width: 1100px;
+}
+
+.grid-item {
+  height: 201.6px;
+  position: relative;
+  overflow: hidden;
+  width: 360px;
+  z-index: 1;
+}
+
+.grid-item img {
+  height: 201.6px;
+  position: absolute;
+  transition: all .5s ease-out;
+  width: 360px;
+}
+
+.grid-item .grad {
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 70%, rgba(0, 0, 0, .75) 100%), url("https://upload.wikimedia.org/wikipedia/commons/8/89/HD_transparent_picture.png");
+  display: flex;
+  height: 201.6px;
+  position: absolute;
+  width: 360px;
+}
+
+.grid-item .play-button {
+  bottom: -10px;
+  cursor: pointer;
+  height: 181.6px;
+  opacity: 0;
+  padding: 10px 130px;
+  position: absolute;
+  top: 10px;
+  transition: opacity .2s ease-out, top .2s ease-out;
+  width: 100px;
+}
+
+.grid-item:hover img {
+  transform: scale(1.1);
+  transition: all .25s ease-out;
+}
+
+.grid-item:hover .play-button {
+  filter: drop-shadow(0 1px 0 rgba(0, 0, 0, .25));
+  opacity: 0.75;
+  top: 0;
+}
+
+.ep-title-wrapper {
+  bottom: 0px;
+  color: #fff;
+  font-size: 0.75rem;
+  padding: 14px 15px;
+  position: absolute;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, .5);
+  width: 298.383px;
+}
+
+.ep-title-wrapper:hover {
+  text-decoration: underline;
+}
+
+.ep-title {
+  overflow: hidden !important;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ep-number-wrapper {
+  bottom: 0px;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 600;
+  padding: 9px 15px 11px 0px;
+  position: absolute;
+  right: 0px;
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, .25);
+  text-align: right;
+  width: 21.3667px;
+}
+
+.ep-number-wrapper i {
+  color: #28a745;
+  text-shadow: 0 1px 0 rgba(0, 0, 0, .25);
+}
+
+
+/* ------------------------ PAGE NAVIGATION ------------------------ */
+
+.page-nav {
+  align-items: center;
+  display: flex;
+  height: 38px;
+  justify-content: center;
+  margin: 0px 0px 16px 0px;
+}
+
+.first-page {
+  align-items: center;
+  background-color: #111;
+  border: 1px solid #000;
+  border-top-left-radius: .25rem;
+  border-bottom-left-radius: .25rem;
+  color: #a20145;
+  cursor: not-allowed;
+  display: flex;
+  font-size: 1rem;
+  height: 36px;
+  justify-content: center;
+  margin: 1px -1px 0px 0px;
+  padding-left: 1px;
+  width: 31.9px;
+}
+
+.prev-page {
+  align-items: center;
+  background-color: #111;
+  border-bottom-width: 1px;
+  border-color: #000;
+  border-left-width: 1px;
+  border-right-width: 0px;
+  border-style: solid;
+  border-top-width: 1px;
+  color: #a20145;
+  cursor: not-allowed;
+  display: flex;
+  font-size: 1rem;
+  height: 36px;
+  justify-content: center;
+  margin-top: 1px;
+  width: 30.333px;
+}
+
+.curr-page {
+  align-items: center;
+  background-color: #d5015b;
+  border: 1px solid #000;
+  color: #fff;
+  cursor: default;
+  display: flex;
+  font-size: 1rem;
+  height: 36px;
+  justify-content: center;
+  margin-top: 1px;
+  width: 31.9px;
+}
+
+.next-page {
+  align-items: center;
+  background-color: #222;
+  border-color: #000;
+  border-bottom-width: 1px;
+  border-left-width: 0px;
+  border-right-width: 1px;
+  border-style: solid;
+  border-top-width: 1px;
+  color: #d5015b;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  height: 36px;
+  justify-content: center;
+  margin-top: 1px;
+  width: 30.333px;
+}
+
+.last-page {
+  align-items: center;
+  background-color: #222;
+  border: 1px solid #000;
+  border-bottom-right-radius: .25rem;
+  border-top-right-radius: .25rem;
+  color: #d5015b;
+  cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  height: 36px;
+  justify-content: center;
+  margin: 1px 0px 0px -1px;
+  padding-right: 1px;
+  width: 31.9px;
+}
