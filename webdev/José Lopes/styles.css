@@ -1,0 +1,200 @@
+body {
+  background-color: #212121;
+  overflow: hidden;
+}
+
+.container {
+  display: grid;
+  grid-template-rows: 100px auto;
+  gap: 0rem;
+}
+
+/*---------Navigation--------------*/
+
+.navigation {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
+  align-items: center;
+  height: 60px;
+  border-bottom: solid;
+  border-color: rgb(101, 102, 104);
+  border-width: 1px;
+  width: 100%;
+}
+
+.right-side {
+  display: flex;
+  justify-self: end;
+}
+
+.left-side {
+  display: flex;
+  justify-self: left;
+  margin-left: 15px;
+}
+
+.ytlogo {
+  height: 40px;
+  justify-self: start;
+  margin-left: 15px;
+}
+
+.search-bar {
+  justify-self: center;
+  width: 100%;
+  max-width: 700px;
+  display: flex;
+  align-items: center;
+  height: 60px;
+}
+
+.search-bar input {
+  background-color: rgb(24, 23, 23);
+  flex: stretch;
+  border: 0;
+  color: aliceblue;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 40px;
+  width: 500px;
+  margin-right: 1px;
+}
+
+.search-bar button img {
+  height: 40px;
+}
+
+.search-bar button {
+  border: 0;
+  flex: stretch;
+  display: flex;
+  background-color: rgb(31, 29, 29);
+}
+::placeholder {
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+.nav-bt {
+  justify-self: start;
+  height: 40px;
+}
+
+.nav-bt2 {
+  flex: auto;
+  height: 40px;
+  margin-left: 10px;
+}
+
+#user {
+  border-radius: 50%;
+}
+
+/*---------Main--------------*/
+
+.main {
+  display: grid;
+  grid-template-columns: 1fr 20fr;
+}
+
+/*Toolbar ig*/
+.side-icon {
+  width: 80px;
+  margin-right: 10px;
+}
+
+/*---------Classe onde é definida a grid--------------*/
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fit,
+    minmax(300px, 1fr)
+  ); /*this way it self ajusts*/
+
+  justify-content: space-between;
+  gap: 1rem;
+  background-color: rgb(24, 23, 23);
+  height: 85vh;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+}
+
+.video-box {
+  display: flex;
+  flex-direction: column;
+  background: rgb(24, 23, 23);
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.video-details {
+  position: relative;
+  cursor: pointer;
+  flex: auto;
+  display: flex;
+  flex-direction: row;
+}
+.thumbnail {
+  width: 100%;
+}
+
+.avatar {
+  height: 36px;
+  margin-top: 5px;
+  margin-right: 12px;
+  border-radius: 50%;
+  margin-left: 0px;
+}
+
+.video-title {
+  font-size: 15px;
+  color: white;
+  margin-top: 1px;
+  margin-bottom: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.video-channel-name {
+  font-size: 13px;
+  color: rgb(153, 144, 144);
+  margin-top: 8px;
+  margin-bottom: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.video-view-count {
+  font-size: 13px;
+  color: rgb(153, 144, 144);
+  margin-top: 1px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/*https://code-boxx.com/text-over-image-hover-html-css/*/
+.hoverwrap-thumb {
+  position: relative;
+}
+
+.hover {
+  box-sizing: border-box;
+  width: 70%;
+  padding: 10px;
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  background-color: rgba(0, 0, 0, 0.9);
+  color: white;
+  font-size: 15px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-bottom: 10px;
+}
+
+.hover {
+  visibility: none;
+  opacity: 0;
+  transition: opacity 0.1s;
+}
+.hoverwrap-thumb:hover .hover {
+  visibility: visible;
+  opacity: 1;
+}
