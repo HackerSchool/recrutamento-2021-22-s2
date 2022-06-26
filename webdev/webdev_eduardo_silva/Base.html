@@ -1,0 +1,169 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <title><!-- Title goes here --></title>
+  </head>
+  <style>
+      .myParagraph {
+        color: red;
+        font-size: 22px;
+      }
+
+      .importantWord {
+          font-weight: bold; /* 700 */
+          color: blue;
+      }
+
+      #specialP {
+          color: pink; 
+          font-weight: 100;
+          font-size: 20px;
+      }
+
+      p {
+          color: white;
+      }
+
+      p .importantWord {
+          font-size: 24px;
+      }
+
+      .exampleDiv {
+          background-color: #8f4742;
+      }
+
+      .exampleDiv p {
+          color: pink
+      }
+      /*
+      p#specialP
+      */
+  </style>
+  <body>
+
+        <!-- para mais tarde 
+            <a href="#"> ir para o mesmo sitio </a> <br>
+            <a href="#specialP"> ir para o mesmo sitio </a> 
+        -->
+
+
+        
+        <!-- Isto e um comentario, nao importa o que escrevo aqui,
+            nao e interpretado como html -->
+            
+        <!-- Nao se pode por um comentario dentro de outro comentario -->
+
+        <!-- <!-- --> -->
+
+        <!-- Tag html funciona como: 
+        <coisa> conteudo </coisa>
+        Ou seja <coisa> determina o inicio da tag
+        E </coisa> determina quando acaba.
+        -->
+
+        <h1>Titulo grande</h1>
+
+        <h2>Titulo menor </h2>
+
+        <h3>Titulo ainda menor</h3>
+
+        <h4>etc...</h4>
+
+        <h5></h5>
+
+        <h6></h6>
+
+        <!-- Nao existe h7.
+        O h1 deve sempre ser mais importante que o h2, o h2 deve ser mais importante
+        que o h3, etc. Isto e importante ate para a pagina aparecer em resultados
+        google (por exemplo a google considera o h1 das partes mais essenciais
+        na sua pesquisa)-->
+
+        <p> 
+            Text text text <br/> 
+            texto texto texto
+        </p>
+        <!-- 
+            Um "line break" nunca tem nada dentro, logo, podemos escrever 
+            <br/> ou <br>
+            Inves de 
+            <br> </br>
+        -->
+
+        <!-- p determina um paragrafo -->
+
+        <img src="tecnico.png" alt="Titulo alternativo caso a imagem nao carregue"/>
+        <img src="exemploImagens/tecnico2.png" alt="Titulo alternativo caso a imagem nao carregue"/>
+        
+        <!-- Uma imagem tem atributos 
+            src , de onde vem a imagem a representar
+            alt , o texto que deve aparecer quando a imagem nao carrega -->
+
+        <br/>
+        <a href="http://www.google.com" target="_blank"> Link para a google </a>
+
+
+        <!-- <a> tem o atributo
+            href , para onde deve ser redirecionado quando clicamos no link
+            target , se deve abrir na mesma janela, numa nova janela, numa window, etcs
+        -->
+
+        <br>
+        <a href="www.google.com" target="_blank"> Link errado </a>
+        <br/>
+        <a href="tecnico.png" target="_blank"> Link para a imagem </a>
+        
+        <br/>
+        <p style="color: green"> Lorem ipsum <br> etcs </p>
+        <p style="color: green; font-size: 22px;"> Lorem ipsum <br> etcs </p>
+        <p style="color: green; font-size: 22px; line-height: 50px;"> Lorem ipsum <br> etcs </p>
+        <p style="color: green; font-size: 22px; line-height: 50px; font-weight: bold"> Lorem ipsum <br> etcs </p>
+
+        <p class="myParagraph"> Lorem ipsum <br> etcs </p>
+        <p class="myParagraph"> Lorem ipsum <br> etcs </p>
+        <p class="myParagraph"> Lorem ipsum <br> etcs </p>
+
+        <p class="myParagraph">
+            <span class="importantWord"> Lorem </span> ipsum <br> etcs 
+        </p>
+
+        <p id="specialP">
+            Lorem ipsum <br> etcs
+        </p>
+
+
+
+
+
+        
+
+        <div class="exampleDiv">
+            <p> Hello </p>
+        </div>
+        <section class="exampleDiv">
+            <p> Hello </p>
+        </section>
+        <article class="exampleDiv">
+            <p> Hello </p>
+        </article>
+
+        <ul>
+            <li>
+                item 1
+            </li>
+            <li>
+                item 2
+            </li>
+            <li>
+                item 3
+            </li>
+        </ul> 
+
+        <!-- https://flukeout.github.io/ -->
+</body>
+</html>
