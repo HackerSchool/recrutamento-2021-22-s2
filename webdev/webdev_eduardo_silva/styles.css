@@ -1,0 +1,297 @@
+html {
+    /* Used this site to pick colors --> https://colorpicker.me/#129d84*/
+
+    /*background colors*/
+    --back1: #e9edee;
+    --back2: #c6edf7;
+    --back3: #91d9eb;
+    --back4: #4a8fa1;
+    --back5: #085063;
+
+    /*complememtary colors*/
+    --antiback1: #eeeae9;
+    --antiback2: #f7d0c6;
+    --antiback3: #eba391;
+    --antiback4: #a15c4a;
+    --antiback5: #631b08;
+
+
+    /* text colors */
+    --text1: #000000;
+    --text2: #ffffff;
+}
+
+
+/*-----------------------------*/
+/*  body    */
+/*-----------------------------*/
+
+
+
+body {
+
+    margin: 0;
+    background-color: var(--antiback1);
+    font-size: small;
+    font-family:'Times New Roman', Times, serif;
+    font-weight: 300;
+
+}
+
+
+.preproducts {
+    align-items: center;
+    margin-top: 2rem;
+    margin-left: 3rem;
+}
+
+main a.products {
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--back5);
+    font-weight: bold;
+    margin-right: 3rem;
+}
+
+/*-----------------------------*/
+
+
+/*-----------------------------*/
+/*home image*/
+/*-----------------------------*/
+
+.imagem-home {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    align-items: center;
+    margin-top: 4rem;
+    border-style: groove;
+    border-color: var(--back3);
+    border-radius: round;
+    max-width: 100%;
+    width: 800px; /*so it fits on the image */
+    height: 387px;
+
+}
+
+.imagem-home img.LeoRosas {
+    max-width: 100%;
+}
+/*-----------------------------*/
+
+
+
+
+
+
+/*-----------------------------*/
+/*brands images*/
+/*-----------------------------*/
+
+
+.brandimage {
+    background-color:#ffffff;
+    align-items: center;
+    max-width: 100%;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    
+}
+.firstsingleimage{
+    
+    margin-left: 4rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+}
+.singleimage{
+
+    margin-left: 2rem;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+}
+
+/*-----------------------------*/
+
+
+
+/*-----------------------------*/
+/* new products */
+/*-----------------------------*/
+
+.newproducttitle {
+    font-size: 15px;
+    font-weight: bold;
+    margin-left: 4rem;
+    align-items: center;
+    color: var(--back5);
+}
+
+.firstnewproduct {
+    background-color: #ffffff;
+    align-items: center;
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    border-style: outset;
+    border-color: var(--back3);
+    display: inline-block;
+    margin-left: 3rem; /*so that the first is more distant to the left*/
+}
+
+
+.newproduct {
+    background-color: #ffffff;
+    align-items: center;
+    max-width: 100%;
+    width: 150px;
+    height: 150px;
+    border-style: outset;
+    border-color: var(--back3);
+    display: inline-block;
+    margin-left: 2rem; /* then all ate the same distance */
+}
+
+/*-----------------------------*/
+
+/*-----------------------------*/
+/* navegator bar */
+/*-----------------------------*/
+
+header {
+    background-color: var(--back5);
+    margin-bottom: 10px;
+}
+
+nav {
+    align-items: center;
+    display: flex;
+    margin: auto;
+    font-weight: bolder;
+}
+
+nav h1 {
+    margin-left: 1rem;
+    font-size: 40px;
+    color: var(--text2);
+    font-weight: bold;
+}
+
+.title {
+    text-decoration: none;
+    color: var(--text2);
+    font-weight: bolder;
+}
+
+.make-right{
+    margin-left: auto;
+}
+
+.navopt{
+    text-decoration: none;
+    font-size: 20px;
+    color: var(--back1);
+    margin-right: 5rem; /*so that "entrar" ... "artigos" are spaced */
+}
+
+
+
+
+/*-----------------------------*/
+
+
+/*-----------------------------*/
+/* footer */
+/*-----------------------------*/
+
+.social {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    margin-top: 0rem;
+    background-color: var(--back5);
+    font-size: 20px;
+    font-weight: 600;
+    text-decoration: none;
+    padding-left: 2rem;;
+}
+
+.socialcor {
+    margin-left: 2rem;
+    color: var(--back1);
+    text-decoration: none;
+}
+
+.additional{
+    padding-left: 4rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
+    background-color: var(--back4);
+}
+
+.addart {
+    color: var(--back1);
+    font-size: 15px;
+    font-weight: 650;
+    line-height: 24px;
+}
+
+
+/*-----------------------------*/
+
+
+/*-----------------------------*/
+/* artigos */
+/*-----------------------------*/
+
+
+.pboxes {
+    margin-top: 2rem;
+    margin-bottom: 0rem;
+    padding-top: 1rem;
+    padding-bottom: 6rem;
+    background-color: #ffffff;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    text-decoration: none;
+}
+
+.miniheaders {
+    margin-left: 4rem;
+    font-size: 13px;
+    color: var(--back4);
+    text-decoration: none;
+}
+
+.mini{
+    list-style: none;
+    text-decoration: none;
+    font-size: 40px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*-----------------------------*/
