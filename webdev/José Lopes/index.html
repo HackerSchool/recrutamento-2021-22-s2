@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TuTube</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <!--Barra de Navegação Up Top, inclui o logo e a search bar-->
+      <div class="navigation">
+        <div class="left-side">
+          <a href="#"
+            ><img class="nav-bt" src="images/menu.png" alt="search"
+          /></a>
+
+          <a href="#"><img class="ytlogo" src="images/yticon.png" alt="" /></a>
+        </div>
+
+        <form action="" class="search-bar">
+          <input type="text" placeholder="Search" name="q" />
+          <button type="submit">
+            <img src="images/search.png" alt="search" />
+          </button>
+        </form>
+
+        <div class="right-side">
+          <a href="#">
+            <img class="nav-bt2" src="images/create.png" alt="create" />
+          </a>
+          <a href="#">
+            <img class="nav-bt2" src="images/apps.png" alt="create" />
+          </a>
+          <a href="#">
+            <img class="nav-bt2" src="images/bell.png" alt="create" />
+          </a>
+          <a href="#">
+            <img
+              class="nav-bt2"
+              id="user"
+              src="images/avatars/user.jpg"
+              alt="create"
+            />
+          </a>
+        </div>
+      </div>
+      <!--Este div contém a toolbar e a grid com os vídeos-->
+      <div class="main">
+        <div class="toolbar">
+          <a href="#">
+            <img class="side-icon" src="images/home.png" alt="" />
+          </a>
+          <a href="#">
+            <img class="side-icon" src="images/explore.png" alt="" />
+          </a>
+          <a href="#">
+            <img class="side-icon" src="images/shit.png" alt="" />
+          </a>
+          <a href="#">
+            <img class="side-icon" src="images/subs.png" alt="" />
+          </a>
+          <a href="#">
+            <img class="side-icon" src="images/lib.png" alt="" />
+          </a>
+        </div>
+        <div class="video-grid">
+          <!--Cada Vídeo está contido numa video-box, que depois é posto numa cell da grid-->
+          <!--Cada Vídeo tem um título, uma thumbnail, creador, viewcount + data-->
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/rick.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to never give up</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/rick.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">
+                  Rick Astley - Never Gonna Give You Up (Official Music Video)
+                </p>
+                <p class="video-channel-name">Rick Astley</p>
+                <p class="video-view-count">1.2B views • 12 years ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a
+              href="https://www.youtube.com/watch?v=-e3QyNXWj6g"
+              class="thumbdiv"
+            >
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/motorway.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to vibe</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="https://www.youtube.com/c/fodsteve1">
+                <img
+                  class="avatar"
+                  src="images/avatars/fearofdark.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">motorway</p>
+                <p class="video-channel-name">Fearofdark</p>
+                <p class="video-view-count">182k views • 2 years ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/mikeT.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">
+                  Keep hovering to get punched in the mouth
+                </div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/0.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">
+                  Mike Tyson talks about relation with Chickens
+                </p>
+                <p class="video-channel-name">Oumar Vásquez</p>
+                <p class="video-view-count">134k views • 4 days ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/subaru.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to do nothing</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/user.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">
+                  Vroom Vroom Stu Stu Stu Stu odeio carros
+                </p>
+                <p class="video-channel-name">José Lopes</p>
+                <p class="video-view-count">3 views • 3 weeks ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a
+              href="https://www.youtube.com/watch?v=m2QFTuqVra8"
+              class="thumbdiv"
+            >
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/fantas.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to do vibe</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a
+                href="https://www.youtube.com/channel/UCJgBqh3tYway5A5VgV4dZRw"
+              >
+                <img
+                  class="avatar"
+                  src="images/avatars/mrbill.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">Mr. Bill - Phantasmagoria</p>
+                <p class="video-channel-name">Mr. Bill</p>
+                <p class="video-view-count">926k views • 9 months ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a
+              href="https://www.youtube.com/watch?v=jkW5uz4o__A"
+              class="thumbdiv"
+            >
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/takanaka.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to do nothing</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/taka.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">
+                  Masayoshi Takanaka - On Guitar (1978) [Full Album Vinyl 24/96]
+                </p>
+                <p class="video-channel-name">Sponsored by AI</p>
+                <p class="video-view-count">134k views • 1 year ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/math.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to do nothing</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/dude.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">Math Video Desmos Calculator You Like</p>
+                <p class="video-channel-name">Andrew</p>
+                <p class="video-view-count">907k views • 1 year ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/jojo.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">
+                  ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA
+                  ORA ORA OAR OAR ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA ORA
+                  ORA ORA ORA ORA ORA ORA ORA OAR OAR ORA
+                </div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/dude2.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">JoJo Memes 25</p>
+                <p class="video-channel-name">NAnax YY?</p>
+                <p class="video-view-count">3B views • 5 hours ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/DRK.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to do -.-.-.---------.</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/hggg.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">What TikTok Does to Your Brain</p>
+                <p class="video-channel-name">HealthyGamerGG</p>
+                <p class="video-view-count">129k views • 2 weeks ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/innerchild.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to treat your inner child</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/chilld.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">Six Signs You are a CHILD?!</p>
+                <p class="video-channel-name">Anastasia Therapy Online</p>
+                <p class="video-view-count">240k views • 2 years ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/ahafunny.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to do nothing</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/fg.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">Family GUy Funny Moments - Peter Dies</p>
+                <p class="video-channel-name">GamerX318</p>
+                <p class="video-view-count">2.4M views • 1 week ago</p>
+              </div>
+            </div>
+          </div>
+          <div class="video-box">
+            <a href="#" class="thumbdiv">
+              <div class="hoverwrap-thumb">
+                <img
+                  class="thumbnail"
+                  src="images/thumbnails/friends.png"
+                  alt="thumbnail"
+                />
+                <div class="hover">Keep hovering to hug your friends</div>
+              </div>
+            </a>
+
+            <div class="video-details">
+              <a href="#">
+                <img
+                  class="avatar"
+                  src="images/avatars/p2g.jpg"
+                  alt="user avatar"
+                />
+              </a>
+              <div class="video-text">
+                <p class="video-title">Why you don't have friends anymore</p>
+                <p class="video-channel-name">Cartas da Maia</p>
+                <p class="video-view-count">5.4M views • Sempre</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
